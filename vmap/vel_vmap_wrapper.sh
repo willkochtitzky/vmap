@@ -7,9 +7,13 @@ all_vmap.py *.tif > all_vmap_pairs.txt
 parallel -j 4 < all_vmap_pairs.txt
 
 mkdir velocity_output/
-mv . velocity_output
+#mv . velocity_output
 #find . -maxdepth 1 -type d -exec mv . velocity_output
+
+mv *spm1 velocity_output/
 
 fnlist=$(ls velocity_output/*/*vm.tif)
 
-make_stack.py $fnlist -outdir vel_stack_out/
+make_stack.py $fnlist -outdir vel_stack_out/ -stack_fn STACK_FN
+mkdir velocity_output/stacked
+mv STACK_FN* velocity_output/stacked
