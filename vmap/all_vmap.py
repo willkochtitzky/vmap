@@ -16,7 +16,7 @@ from pygeotools.lib import timelib
 
 #Set these for min and max time difference
 min_ts_diff = timedelta(days=60)
-max_ts_diff = timedelta(days=365*3) 
+max_ts_diff = timedelta(days=365*1.5) 
 
 fn_list = np.sort(np.array(sys.argv[1:]))
 ts_list = np.array([timelib.fn_getdatetime(fn) for fn in fn_list])
@@ -27,4 +27,4 @@ for i,fn in enumerate(fn_list):
     ts_diff = ts_c - ts
     idx = (ts_diff < max_ts_diff) & (ts_diff > min_ts_diff)
     for j in fn_list[(idx.nonzero()[0]+(i+1))]:
-        print("vmap.py %s %s" % (fn, j))
+        print("/Users/willkochtitzky/bin/GitHub/vmap/vmap/vmap.py %s %s" % (fn, j))
