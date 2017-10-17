@@ -27,4 +27,4 @@ for i,fn in enumerate(fn_list):
     ts_diff = ts_c - ts
     idx = (ts_diff < max_ts_diff) & (ts_diff > min_ts_diff)
     for j in fn_list[(idx.nonzero()[0]+(i+1))]:
-        print("/Users/willkochtitzky/bin/GitHub/vmap/vmap/vmap.py %s %s" % (fn, j))
+        print("vmap.py %s %s" % (fn, j))
